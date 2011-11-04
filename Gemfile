@@ -40,3 +40,8 @@ group :test do
   gem 'rspec-rails', ">= 2.0.0.beta"
   gem 'turn', :require => false
 end
+
+group :production do
+  gem 'pg'
+end
+  
