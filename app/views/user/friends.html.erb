@@ -1,2 +1,6 @@
-<h1>User#friends</h1>
-<p>Find me in app/views/user/friends.html.erb</p>
+<h1><%= @me.name %>'s friends</h1>
+<ul>
+    <% @friends.each |friend| do %>
+        <li><%= friend.name %></li>
+    <%=end%>
+</ul>
