@@ -9,6 +9,10 @@
             cookie     : true,
             xfbml      : true
           });
+          FB.Event.subscribe('auth.login', function() {
+            var url =  "http://electric-waterfall-1160.heroku.com/"
+            window.location = url + "friends";
+            });
       };
       (function(d){
            var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
@@ -16,10 +20,6 @@
            js.src = "//connect.facebook.net/en_US/all.js";
            d.getElementsByTagName('head')[0].appendChild(js);
        }(document));
-      FB.Event.subscribe('auth.login', function() {
-            var url =  "http://electric-waterfall-1160.heroku.com/"
-            window.location = url + "friends";
-      });
      </script>
 
 <div class="fb-login-button" data-perms="user_likes,friends_likes">Login with Facebook</div>
