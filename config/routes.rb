@@ -1,4 +1,9 @@
 LikeIntersection::Application.routes.draw do
+  match "/login", :to => 'user#login'
+  match "/friends", :to => 'user#friends'
+  match "/likes", :to => 'user#likes'
+  root :to => 'user#login'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +53,6 @@ LikeIntersection::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

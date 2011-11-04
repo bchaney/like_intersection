@@ -6,7 +6,7 @@ gem 'rails', '3.1.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'koala'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,6 +32,7 @@ gem 'jquery-rails'
 
 group :development do
     gem 'rspec-rails', ">= 2.0.0.beta"
+    gem 'webrat'
 end
 
 group :test do
