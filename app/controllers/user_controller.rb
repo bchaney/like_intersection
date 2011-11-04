@@ -7,7 +7,7 @@ class UserController < ApplicationController
     
     def login
         @title = "Login"
-        if @access_token != nil
+        if @facebook_cookies != nil
             redirect_to friends_path
         end
     end
