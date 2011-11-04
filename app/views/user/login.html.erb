@@ -8,12 +8,10 @@
             status     : true, 
             cookie     : true,
             xfbml      : true
-          });
-          FB.Event.subscribe('auth.login', function() {
-            console.log('got auth event');
-            var url =  "http://electric-waterfall-1160.heroku.com/"
-            window.location = url + "friends";
-            });
+        });
+        FB.Event.subscribe('auth.login', function(resp) {
+            window.location = 'http://electric-waterfall-1160.heroku.com/friends';
+        });
       };
       (function(d){
            var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
