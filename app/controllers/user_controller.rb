@@ -1,11 +1,20 @@
 class UserController < ApplicationController
+    before_filter :parse_facebook_cookies
+
+    def parse_facebook_cookies
+        @facebook_cookies ||= Koala::Facebook::OAuth.new.get_user_info_from_cookie(cookies)
+    end
+    
     def login
         @title = "Login"
+        if @access_token != nil
+            redirect_to friends_path
+        end
     end
 
     def friends
         @title = "Friends"
-        @facebook_cookies ||= Koala::Facebook::OAuth.new.get_user_info_from_cookie(cookies)
+    #    @facebook_cookies ||= Koala::Facebook::OAuth.new.get_user_info_from_cookie(cookies)
         if @facebook_cookies != nil
             @access_token = @facebook_cookies["access_token"]
             @api = Koala::Facebook::API.new(@access_token)
