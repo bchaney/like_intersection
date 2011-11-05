@@ -34,16 +34,16 @@ class UserController < ApplicationController
             @currFriendName = params[:name]
             currFriendLikes = api.get_connections(currFriendId, 'likes')
             myLikes = api.get_connections('me', 'likes')
-            #@intersectionLikes = []
-            #currFriendLikes.each do |friendLike|
-            #    myLikes.each do |myLike|
-            #        if friendLike["id"] == myLike["id"]
-            #            @intersectionLikes << myLike
-            #            next
-            #        end
-            #    end
-            #end
-            @intersectionLikes = currFriendLikes & myLikes 
+            @intersectionLikes = []
+            currFriendLikes.each do |friendLike|
+                myLikes.each do |myLike|
+                    if friendLike["id"] == myLike["id"]
+                        @intersectionLikes << myLike
+                        next
+                    end
+                end
+            end
+            #@intersectionLikes = @currFriendLikes & @myLikes 
         end
     end
 end
