@@ -34,7 +34,7 @@ class UserController < ApplicationController
         @title = "Likes"
         currFriendId = params[:id]
         @currFriendName = params[:name]
-        currFriendLikes = @@api.get_connections(currFriendId, 'likes')
-        @intersectionLikes = currFriendLikes & @@likes 
+        @currFriendLikes = @@api.get_connections(currFriendId, 'likes')
+        @intersectionLikes = @currFriendLikes & @@likes 
     end
 end
