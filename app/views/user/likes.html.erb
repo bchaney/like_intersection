@@ -1,7 +1,7 @@
 <h1>Intersection of Likes</h1>
 <ul>
     <% @intersectionLikes.each do |like| %>
-        <li><%= like["name"] %>
-            <%= like["id"] %></li>
+        <li><a href=<%= "http://facebook.com/" + like["id"] %>><img src=<%= "http://graph.facebook.com/" + like["id"] + "/picture" %>></a>
+        <a href=<%= "http://facebook.com/" + like["id"] %>><%= like["name"] %></a>
     <% end %>
 </ul>
