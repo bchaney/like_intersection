@@ -1,17 +1,4 @@
-<h1><%= @currFriendName %>'s likes</h1>
-Curr Friend Likes
-<ul>
-    <% @currFriendLikes.each do |like| %>
-        <li><%= like["name"] %></li>
-    <% end %>
-</ul>
-My Likes
-<ul>
-    <% @myLikes.each do |like| %>
-        <li><%= like["name"] %></li>
-    <% end %>
-</ul>
-
+<h1>Intersection of Likes</h1>
 <ul>
     <% @intersectionLikes.each do |like| %>
         <li><%= like["name"] %></li>
