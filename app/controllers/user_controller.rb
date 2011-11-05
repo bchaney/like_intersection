@@ -1,9 +1,5 @@
 class UserController < ApplicationController
     before_filter :parse_facebook_cookies
-    @api
-    class << self; attr_reader :api; end
-    @likes
-    class << self; attr_reader :likes; end
 
     def parse_facebook_cookies
         @facebook_cookies ||= Koala::Facebook::OAuth.new.get_user_info_from_cookie(cookies)
@@ -21,8 +17,8 @@ class UserController < ApplicationController
     #    @facebook_cookies ||= Koala::Facebook::OAuth.new.get_user_info_from_cookie(cookies)
         if @facebook_cookies != nil
             @access_token = @facebook_cookies["access_token"]
-            @@api = Koala::Facebook::API.new(@access_token)
-            @me, @friends, @likes = @@api.batch do |batch_api|
+            @api = Koala::Facebook::API.new(@access_token)
+            @me, @friends, @likes = api.batch do |batch_api|
                 batch_api.get_object('me')
                 batch_api.get_connections('me', 'friends')
                 batch_api.get_connections('me', 'likes')
@@ -36,7 +32,7 @@ class UserController < ApplicationController
         @title = "Likes"
         currFriendId = params[:id]
         @currFriendName = params[:name]
-        @currFriendLikes = @@api.get_connections(currFriendId, 'likes')
+        @currFriendLikes = @api.get_connections(currFriendId, 'likes')
         @intersectionLikes = @currFriendLikes & @likes 
     end
 end
