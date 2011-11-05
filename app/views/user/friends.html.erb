@@ -1,6 +1,7 @@
 <h1><%= @me["name"] %>'s friends</h1>
 <ul>
     <% @friends.each do |friend| %>
-        <li><%= link_to(friend["name"], likes_path(friend), friend)%></li>
+        <li><img src=<%= "http://graph.facebook.com/" + friend["id"] + "/picture"%>>
+            <%= link_to(friend["name"], likes_path(friend), friend)%></li>
     <% end %>
 </ul>
