@@ -1,6 +1,6 @@
 <h1><%= @me["name"] %>'s friends</h1>
 <ul>
     <% @friends.each do |friend| %>
-        <li><%= link_to friend["name"] likes_path(friend) %></li>
+        <li><%= link_to(friend["name"], likes_path(friend), friend)%></li>
     <% end %>
 </ul>
