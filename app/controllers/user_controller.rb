@@ -34,7 +34,7 @@ class UserController < ApplicationController
             @currFriendName = params[:name]
             @currFriendLikes = api.get_connections(currFriendId, 'likes')
             @myLikes = api.get_connections('me', 'likes')
-            @currFriendsLikes.each do |friendLike|
+            @currFriendLikes.each do |friendLike|
                 @myLikes.each do |myLike|
                     if friendLike["id"] == myLike["id"]
                         @intersectionLikes << myLike
