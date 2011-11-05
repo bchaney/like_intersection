@@ -1,6 +1,6 @@
 class UserController < ApplicationController
     before_filter :parse_facebook_cookies
-    @@api = nil
+    @@api
 
     def parse_facebook_cookies
         @facebook_cookies ||= Koala::Facebook::OAuth.new.get_user_info_from_cookie(cookies)
