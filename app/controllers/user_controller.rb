@@ -32,7 +32,7 @@ class UserController < ApplicationController
     def likes
         @title = "Likes"
         currFriendId = params[:id]
-        currFriendName = params[:name]
-        @currFriendLikes = @@api.get_connections(currFriendId.to_s, 'likes')
+        @currFriendName = params[:name]
+        @currFriendLikes = @@api.get_connections(currFriendId, 'likes')
     end
 end
