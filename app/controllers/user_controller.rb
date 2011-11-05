@@ -19,7 +19,7 @@ class UserController < ApplicationController
         if @facebook_cookies != nil
             @access_token = @facebook_cookies["access_token"]
             @@api = Koala::Facebook::API.new(@access_token)
-            @me, @friends, @likes = @api.batch do |batch_api|
+            @me, @friends, @likes = @@api.batch do |batch_api|
                 batch_api.get_object('me')
                 batch_api.get_connections('me', 'friends')
                 batch_api.get_connections('me', 'likes')
