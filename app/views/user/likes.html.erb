@@ -1,2 +1,6 @@
-<h1>User#likes</h1>
-<p>Find me in app/views/user/likes.html.erb</p>
+<h1><%= @currFriendName %>'s likes</h1>
+<ul>
+    <% @currFriendLikes.each do |like| %>
+        <li><%= like["name"] %></li>
+    <% end %>
+</ul>
