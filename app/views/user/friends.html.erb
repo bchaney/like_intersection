@@ -2,8 +2,8 @@
     <div class="span-24">
         <h1><%= @me["name"] %>'s friends</h1>
     </div>
-    <div class="prepend-1"/>
-<% @friends.each do |friend, i| %>
+<% i=0
+   @friends.each do |friend| %>
     <%= i=i+1 %>
     <% if i == 6 %>
         <div class="span-4 last">
