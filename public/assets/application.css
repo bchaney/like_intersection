@@ -20,9 +20,9 @@ h1 {
   padding: 20px;
   background: #fff;
 }
-#element {
-  margin-left: auto;
-  margin-right: auto;
+.centerMe {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .round {
