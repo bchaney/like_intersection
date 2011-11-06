@@ -1,7 +1,7 @@
 module UserHelper
     def add_friend(friend) 
         data = ""
-        data << "<td>"
+        data << "<td class='centerMe'>"
         data << "#{link_to(image_tag("http://graph.facebook.com/" + 
                                         friend["id"] + "/picture", 
                                         :class => "round"), 
