@@ -7,6 +7,6 @@ module UserHelper
                                         :class => "round"), 
                                         likes_path(friend), friend)}"
         html << "<br>#{link_to(friend["name"], likes_path(friend), friend)}"
-        html << "</td>
+        html << "</td>"
     end
 end
