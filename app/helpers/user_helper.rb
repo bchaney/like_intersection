@@ -22,7 +22,7 @@ module UserHelper
         data << "<td>"
         like_url = "http://www.facebook.com/#{like["id"]}"
         img_url = "http://graph.facebook.com/#{like["id"]}/picture"
-        data << "<a href='#{like_url}'>#{image_path(img_url)}</a>"
+        data << "<a href='#{like_url}'>#{image_tag(img_url, :class=> 'round')}</a>"
         data << "<br><a href='#{like_url}'>#{like["name"]}</a>"
         data << "</td>"
         data.html_safe
