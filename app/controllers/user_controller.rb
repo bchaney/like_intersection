@@ -14,20 +14,20 @@ class UserController < ApplicationController
 
     def friends
         @title = "Friends"
-    #    @facebook_cookies ||= Koala::Facebook::OAuth.new.get_user_info_from_cookie(cookies)
         if @facebook_cookies != nil
             api = Koala::Facebook::API.new(@facebook_cookies["access_token"])
             @me, @friends = api.batch do |batch_api|
                 batch_api.get_object('me')
                 batch_api.get_connections('me', 'friends')
             end
+            @friends.sort_by { |item| item[:name] }            
         else
             redirect_to login_path 
         end
     end
 
     def likes
-        @title = "Likes"
+        @title = "Like Intersection"
         if @facebook_cookies != nil
             api = Koala::Facebook::API.new(@facebook_cookies["access_token"])
             currFriendId = params[:id]
