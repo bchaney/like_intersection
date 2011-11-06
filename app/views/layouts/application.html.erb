@@ -7,10 +7,11 @@
         <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
         <%= stylesheet_link_tag 'custom', :media => 'screen' %>
     </head>
-    <body>
-        <section class="round">
-            <%= yield %>
-        </section>
-
-    </body>
+    <div class="container">
+        <body>
+            <section class="round">
+                <%= yield %>
+            </section>
+        </body>
+    </div>
 </html>
