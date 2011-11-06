@@ -11,10 +11,12 @@
     <% else %>
         <div id="element" class="span-4">
     <% end %>
+    <div class="prepend-1 span-2 append-1 last">
     <%= link_to(image_tag("http://graph.facebook.com/" + friend["id"] + "/picture", 
                           :class => "round"), 
                           likes_path(friend), friend) %><br>
             <%= link_to(friend["name"], likes_path(friend), friend) %>
+    </div>
     </div>
 <% end %>
 </div>
