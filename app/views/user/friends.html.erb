@@ -4,14 +4,14 @@
         <tr>
             <% i=0
             @friends.each do |friend| %>
-            <%   i=i+1
-                if i == 6 %>
+            <% if i == 6 %>
                     </tr>
                     <tr>
                     <% i=0 %>
                 <% end %>
             <%= add_friend(friend) %>
-        <% end %>
+        <%  i = i+1
+            end %>
         </tr>
     </table>
 </div>
