@@ -8,4 +8,5 @@ module UserHelper
                                         likes_path(friend), friend)}"
         html << "<br>#{link_to(friend["name"], likes_path(friend), friend)}"
         html << "</td>
+    end
 end
