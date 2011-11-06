@@ -1,15 +1,15 @@
 <div class="container">
-    <div class="span-24">
+    <div class="span-24 showgrid">
         <h1><%= @me["name"] %>'s friends</h1>
     </div>
 <% i=0
    @friends.each do |friend| %>
    <%   i=i+1
         if i == 6 %>
-        <div class="span-4 last">
+        <div class="span-4 center last">
     <% i=0 %>
     <% else %>
-        <div class="span-4">
+        <div class="span-4 center">
     <% end %>
             
     <%= link_to(image_tag("http://graph.facebook.com/" + friend["id"] + "/picture", 
