@@ -1,7 +1,7 @@
 <h1><%= @me["name"] %>'s friends</h1>
 <ul>
     <% @friends.each do |friend| %>
-        <li><%= link_to(image_tag("http://graph.facebook.com/" + friend["id"] + "/picture", :class => round), 
+        <li><%= link_to(image_tag("http://graph.facebook.com/" + friend["id"] + "/picture", :class => "round"), 
                         likes_path(friend), friend) %>
             <%= link_to(friend["name"], likes_path(friend), friend)%></li>
     <% end %>
