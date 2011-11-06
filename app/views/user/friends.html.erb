@@ -3,5 +3,5 @@
     <%= link_to(image_tag("http://graph.facebook.com/" + friend["id"] + "/picture", 
                           :class => "round"), 
             likes_path(friend), friend) %>
-            <%= link_to(friend["name"], likes_path(friend), friend)%><br>
+            <%= link_to(friend["name"], likes_path(friend), friend) %><br>
 <% end %>
