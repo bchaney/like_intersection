@@ -1,6 +1,6 @@
 <h1><%= @me["name"] %>'s friends</h1>
 <% @friends.each do |friend| %>
-    <div class="span-2">
+    <div class="span-4">
     <%= link_to(image_tag("http://graph.facebook.com/" + friend["id"] + "/picture", 
                           :class => "round"), 
             likes_path(friend), friend) %>
