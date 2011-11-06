@@ -1,15 +1,14 @@
 .container {
-    width: 710px;
+  width: 710px;
 }
 
 body {
-    background: #000;
+  background: #cff;
 }
 
 section {
-    margin-top: 1em;
-    font-size: 120%;
-    padding: 20px;
-    background: #fff;
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: #fff;
 }
-
