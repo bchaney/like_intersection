@@ -1,7 +1,17 @@
-<h1>Intersection of Likes</h1>
-<ul>
-    <% @intersectionLikes.each do |like| %>
-        <li><a href=<%= "http://facebook.com/" + like["id"] %>><img src=<%= "http://graph.facebook.com/" + like["id"] + "/picture" %>></a>
-        <a href=<%= "http://facebook.com/" + like["id"] %>><%= like["name"] %></a>
-    <% end %>
-</ul>
+<div class="container">
+    <h1 class="round">Intersection of Likes with <%= @currFriendName %></h1>
+    <table>
+        <tr>
+            <% i=0
+            @intersectionLikes.each do |like| %>
+            <% if i == 6 %>
+                    </tr>
+                    <tr>
+                    <% i=0 %>
+                <% end %>
+            <%= add_like(like) %>
+        <%  i = i+1
+            end %>
+        </tr>
+    </table>
+</div>
