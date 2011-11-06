@@ -5,8 +5,12 @@
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
         <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
+        <%= stylesheet_link_tag 'custom', :media => 'screen' %>
     </head>
     <body>
-        <%= yield %>
+        <section class="round">
+            <%= yield %>
+        </section>
+
     </body>
 </html>
