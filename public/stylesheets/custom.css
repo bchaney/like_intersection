@@ -12,3 +12,9 @@ section {
   padding: 20px;
   background: #fff;
 }
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
