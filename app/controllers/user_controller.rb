@@ -20,7 +20,7 @@ class UserController < ApplicationController
                 batch_api.get_object('me')
                 batch_api.get_connections('me', 'friends')
             end
-            @friends.sort_by { |item| item["name"] }
+            @friends.sort_by { |k, v| v["name"] }
         else
             redirect_to login_path 
         end
