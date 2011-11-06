@@ -6,10 +6,10 @@
    @friends.each do |friend| %>
    <%   i=i+1
         if i == 6 %>
-        <div class="span-4 right left last">
+        <div id="element" class="span-4 last">
     <% i=0 %>
     <% else %>
-        <div class="span-4 right left">
+        <div id="element" class="span-4">
     <% end %>
     <%= link_to(image_tag("http://graph.facebook.com/" + friend["id"] + "/picture", 
                           :class => "round"), 
