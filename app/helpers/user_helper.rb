@@ -24,7 +24,7 @@ module UserHelper
         img_url = "http://graph.facebook.com/#{like["id"]}/picture"
         data << "<a href='#{like_url}'>#{image_path(img_url)}</a>"
         data << "<br><a href='#{like_url}'>#{like["name"]}</a>"
-        data << </td>
+        data << "</td>"
         data.html_safe
     end
 end
