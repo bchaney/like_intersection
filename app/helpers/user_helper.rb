@@ -7,7 +7,7 @@ module UserHelper
                                         likes_path(friend), friend)
         text_link = link_to(friend["name"], likes_path(friend), friend)
         # Create a link to the profile picture and like instersection link
-        data << "#{img_link}"
+        data << img_link
         #link_to(image_tag("http://graph.facebook.com/" + 
         #                                friend["id"] + "/picture", 
         #                                :class => "round"), 
